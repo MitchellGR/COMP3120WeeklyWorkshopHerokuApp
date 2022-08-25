@@ -10,7 +10,7 @@ function App() {
   const [units, setUnits] = useState([])
 
   const addNewUnit = (newUnit) => {
-    axios.post(baseUrl + "/api/units", newUnit)
+    axios.post("/api/units", newUnit)
     .then(response => {
       console.log("POST response", response)
       setUnits([...units, response.data])
@@ -18,12 +18,12 @@ function App() {
   }
 
   const deleteUnit = (unitID) => {
-    const unitURL = baseUrl + "/api/units/" + unitID
+    const unitURL = "/api/units" + unitID
     axios.delete(unitURL)
     .then(response => {
       console.log("DELETE response", response)
 
-      axios.get( baseUrl + "/api/units")
+      axios.get("/api/units")
       .then((response) => {
         console.log("response: ", response)
         setUnits(response.data)
@@ -37,7 +37,7 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get( baseUrl + "/api/units")
+    axios.get("/api/units")
     .then((response) => {
       console.log("response: ", response)
       setUnits(response.data)

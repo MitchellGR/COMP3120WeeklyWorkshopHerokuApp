@@ -52,7 +52,7 @@ const UnitForm = ({updateFn}) => {
             <label htmlFor="title">Unit Title</label>
             <input name="title" onChange={updateField}></input>
 
-            <label htmlFor="offerings" style={{fontWeight:"bold"}}>&nbsp; Offerings &nbsp;</label>
+            <label htmlFor="offerings" style={{fontWeight:"bold"}}>&nbsp; Offerings ##### &nbsp;</label>
             S1 <input type="checkbox" onChange={updateField} name="offering" value="S1"></input>
             S2 <input type="checkbox" onChange={updateField} name="offering" value="S2"></input>
             S3 <input type="checkbox" onChange={updateField} name="offering" value="S3"></input>
